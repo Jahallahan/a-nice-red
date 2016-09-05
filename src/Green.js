@@ -57,14 +57,14 @@ var Green = React.createClass ({
 
   render: function() {
 
-    var greenHex = Convert.hsl.hex( this.getGreenH(this.props.color.h) ,  this.getGreenS(parseInt(this.props.color.s)), this.getGreenL(parseInt(this.props.color.l)))
+    var greenHex = Convert.hsl.hex( this.getGreenH(this.props.color[0]) ,  this.getGreenS(this.props.color[1]), this.getGreenL(this.props.color[2]) )
 
     var styleGreen = {
       background: "#" + greenHex,
     };
 
     return (
-      <div className="swatch green" style={ styleGreen }> This is the Green Swatch #{ greenHex } </div>
+      <div className="swatch green#" style={ styleGreen }> This is the Green Swatch #{ greenHex } </div>
     );
   }
 });

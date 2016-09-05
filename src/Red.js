@@ -57,7 +57,7 @@ var Red = React.createClass ({
 
   render: function() {
 
-    var redHex = Convert.hsl.hex( this.getRedH(this.props.color.h) ,  this.getRedS(parseInt(this.props.color.s)), this.getRedL(parseInt(this.props.color.l)))
+    var redHex = Convert.hsl.hex( this.getRedH(this.props.color[0]) ,  this.getRedS(this.props.color[1]), this.getRedL(this.props.color[2]) )
 
     var styleRed = {
       background: "#" + redHex,

@@ -49,7 +49,7 @@ var Amber = React.createClass ({
 
   render: function() {
 
-    var amberHex = Convert.hsl.hex( this.getAmberH(this.props.color.h) ,  this.getAmberS(parseInt(this.props.color.s)), this.getAmberL(parseInt(this.props.color.l)))
+    var amberHex = Convert.hsl.hex( this.getAmberH(this.props.color[0]) ,  this.getAmberS(this.props.color[1]), this.getAmberL(this.props.color[2]))
 
     var styleAmber = {
       background: "#" + amberHex,
