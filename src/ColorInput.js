@@ -20,6 +20,12 @@ var ColorInput = React.createClass ({
     this.setState({ displayColorPicker: !this.state.displayColorPicker })
   },
 
+  handleChange: function(color){
+    var newColor = color.hex.replace(/[^A-Za-z0-9]/g, '');
+    this.setState({ color: newColor });
+    this.props.callbackParent(newColor); // hey parent, I've changed!
+  },
+
   handleClose: function() {
     this.setState({ displayColorPicker: false })
   },
@@ -41,11 +47,11 @@ var ColorInput = React.createClass ({
 
     return (
       <div>
-        <input onChange={this.onTextChanged} />
+        <input className="color-input" value={this.state.color} onChange={this.onTextChanged} />
         <button onClick={this.handleClick}>Choose Color</button>
         { this.state.displayColorPicker ? <div style={ popover }>
           <div style={ cover } onClick={ this.handleClose }/>
-          <SketchPicker color={ this.state.color } />
+          <SketchPicker color={ this.state.color } onChange={ this.handleChange } />
         </div> : null }
       </div>
     );
