@@ -6,13 +6,25 @@ var ColorInput = React.createClass ({
   getInitialState: function() {
      return {
        color: "4A90E2",
+       userText: "",
        displayColorPicker: false
      };
    },
 
+  componentWillMount: function(){
+    this.setState({
+      color: this.props.initialColor,
+      userText: "#" + this.props.initialColor
+    })
+  },
+
  onTextChanged: function(newColor) {
-    var newColor = newColor.target.value.replace(/[^A-Za-z0-9]/g, '');
-    this.setState({ color: newColor });
+    var newColor = newColor.target.value;
+    var cleanedColor = newColor.replace(/[^A-Za-z0-9]/g, '');
+    this.setState({
+      color: cleanedColor,
+      userText: newColor
+    });
     this.props.callbackParent(newColor); // hey parent, I've changed!
   },
 
@@ -22,7 +34,10 @@ var ColorInput = React.createClass ({
 
   handleChange: function(color){
     var newColor = color.hex.replace(/[^A-Za-z0-9]/g, '');
-    this.setState({ color: newColor });
+    this.setState({
+      color: newColor,
+      userText: "#" + newColor
+    });
     this.props.callbackParent(newColor); // hey parent, I've changed!
   },
 
@@ -47,7 +62,7 @@ var ColorInput = React.createClass ({
 
     return (
       <div>
-        <input className="color-input" value={this.state.color} onChange={this.onTextChanged} />
+        <input className="color-input" value={this.props.userText} onChange={this.props.onColorChanged} />
         <button onClick={this.handleClick}>Choose Color</button>
         { this.state.displayColorPicker ? <div style={ popover }>
           <div style={ cover } onClick={ this.handleClose }/>

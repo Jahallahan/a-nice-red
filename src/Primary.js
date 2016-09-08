@@ -3,6 +3,8 @@ import ColorInput from './ColorInput';
 
 var Primary = React.createClass ({
 
+
+
   getInitialState: function() {
     return {
       color: "4A90E2",
@@ -17,15 +19,17 @@ var Primary = React.createClass ({
     },
 
 
+
+
   render: function() {
 
     var testStyle = {
-      background: `#${this.state.color}`,
+      background: `#${this.props.color}`,
     };
 
     return (
       <div className="swatch primary" style={ testStyle } onChange={this.onChange}>
-      <ColorInput initialColor={this.state.color} callbackParent={this.onChildChanged} />
+      {this.props.children}
       </div>
     );
   }
