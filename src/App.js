@@ -7,6 +7,7 @@ import Red from './Red';
 import Amber from './Amber';
 import Convert from 'color-convert';
 import ColorInput from './ColorInput';
+import ColorPickerOverlay from './ColorPicker';
 
 var urlHash = window.location.hash;
 
@@ -47,6 +48,14 @@ var App = React.createClass ({
      });
    },
 
+   onColorPickerChanged: function(color){
+     var newColor = color.replace(/[^A-Za-z0-9]/g, '');
+     this.setState({
+       color: newColor,
+       colorHsl: Convert.hex.hsl(newColor),
+       userText: "#" + newColor
+     });
+   },
 
 
   render: function() {
@@ -54,8 +63,9 @@ var App = React.createClass ({
 
     return (
       <div className="App">
-        <Primary color={ this.state.color } callbackParent={this.onChildChanged}>
-          <ColorInput initialColor={ this.state.color } onColorChanged={this.onColorChanged} />
+        <Primary color={ this.state.color }>
+          <ColorInput initialColor={ this.state.color } userText={this.state.userText} onColorChanged={this.onColorChanged} />
+          <ColorPickerOverlay color={ this.state.color } onColorPickerChanged={this.onColorPickerChanged} />
         </Primary>
         <Green color={ this.state.colorHsl }  />
         <Red color={ this.state.colorHsl }  />

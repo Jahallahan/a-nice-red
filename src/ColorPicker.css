@@ -1,0 +1,24 @@
+.react-color-picker{
+  background-color: white;
+  padding: 1rem;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.1);
+  border-radius: 5px;
+}
+
+.react-color-picker__saturation-spectrum{
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.react-color-picker__hue-spectrum{
+  border-radius: 50px
+}
+
+.react-color-picker__hue-spectrum .react-color-picker__hue-drag{
+  width: 18px;
+  margin-left: -4px;
+  background-color: white;
+  box-shadow: 0 0 3px 0 rgba(0,0,0,0.4);
+  border: none;
+  border-radius: 50px;
+}
