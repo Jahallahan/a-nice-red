@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Header from './Header';
 import Primary from './Primary';
 import Green from './Green';
 import Red from './Red';
@@ -17,7 +18,8 @@ var App = React.createClass ({
     return {
       color: "4A90E2",
       colorHsl: [212, 72, 59],
-      userText: "#4A90E2"
+      userText: "#4A90E2",
+      urlHash: urlHash
     };
   },
 
@@ -38,13 +40,21 @@ var App = React.createClass ({
     }
   },
 
+  componentDidUpdate(prevProps, prevState){
+    if (prevState.urlHash != this.state.urlHash){
+      window.location.hash = this.state.urlHash;
+    }
+
+  },
+
   onColorChanged: function(newColor) {
      var newColor = newColor.target.value;
      var cleanedColor = newColor.replace(/[^A-Za-z0-9]/g, '');
      this.setState({
        color: cleanedColor,
        colorHsl: Convert.hex.hsl(newColor),
-       userText: newColor
+       userText: newColor,
+       urlHash: newColor
      });
    },
 
@@ -53,7 +63,8 @@ var App = React.createClass ({
      this.setState({
        color: newColor,
        colorHsl: Convert.hex.hsl(newColor),
-       userText: "#" + newColor
+       userText: "#" + newColor,
+       urlHash: "#" + newColor
      });
    },
 
@@ -63,9 +74,11 @@ var App = React.createClass ({
 
     return (
       <div className="App">
+        <Header />
         <Primary color={ this.state.color }>
-          <ColorInput initialColor={ this.state.color } userText={this.state.userText} onColorChanged={this.onColorChanged} />
-          <ColorPickerOverlay color={ this.state.color } onColorPickerChanged={this.onColorPickerChanged} />
+          <ColorInput initialColor={ this.state.color } userText={this.state.userText} onColorChanged={this.onColorChanged} >
+            <ColorPickerOverlay color={ this.state.color } onColorPickerChanged={this.onColorPickerChanged} />
+          </ColorInput>      
         </Primary>
         <Green color={ this.state.colorHsl }  />
         <Red color={ this.state.colorHsl }  />

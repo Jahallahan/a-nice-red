@@ -7,8 +7,9 @@ var ColorInput = React.createClass ({
   render: function() {
 
     return (
-      <div>
-        <input className="color-input" value={this.props.userText} onChange={this.props.onColorChanged} />
+      <div className ="input-container">
+        <input className="color-input monospace" value={this.props.userText} onChange={this.props.onColorChanged} />
+        {this.props.children}
       </div>
     );
   }

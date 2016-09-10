@@ -418,9 +418,12 @@ textarea {
   font: inherit; /* 2 */
 }
 
+/******************************************/
+
 body{
   box-sizing: border-box;
   font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+  color: #2a2a2a;
 }
 
 *{
@@ -434,27 +437,108 @@ body{
   align-content: stretch;
   padding: 1rem;
   flex-wrap: wrap;
-  height: 100vh;
+  min-height: 100vh;
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+a{
+  color: #1A6AC7;
+  transition: all ease 0.2s;
+}
+
+a:hover{
+  color: #0750A7;
+}
+
+h1{
+  font-size: 4rem;
+  letter-spacing: -0.05em;
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
+p{
+  font-size: 1.5rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  margin-top: 0;
+  color: #747373;
 }
 
 .monospace{
   font-family:Consolas, monaco, monospace;
 }
 
-.swatch{
-  border-radius: 0.5rem;
-  margin: 0.5rem;
+.header{
+  flex: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  text-align: center;
 }
 
-.primary{
-  width: 100%;
+.primary-container{
+  flex: 2 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.primary-swatch{
+  flex: 1 100%;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
+.color-input-panel{
+  border: 1px solid #E9E9E9;
+  flex: 1 100%;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  border-left: none;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.color-input-panel h2{
+  flex: 1 100%;
+}
+
+.input-container{
+  flex: 1 100%;
 }
 
 .color-input{
-  font-size: 2rem;
-  border-radius: 0.25rem;
-  border: none;
+  font-size: 1.3rem;
+  color: #747373;
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+  border: 1px solid #CFCFCF;
+  padding: 0.5rem 1rem;
+  width: 6em;
+  height: 3rem;
+}
+
+.picker-button-container{
+  display: inline-block;
+}
+
+.picker-button{
+  font-size: 1.3rem;
+  color: #747373;
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  border: 1px solid #CFCFCF;
+  background-color: #EDEDED;
+  height: 3rem;
+  width: 3rem;
+  border-left: none;
+}
+
+
+.swatch{
+  border-radius: 0.5rem;
+  margin: 0.5rem;
 }
