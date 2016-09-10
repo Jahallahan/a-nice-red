@@ -420,6 +420,7 @@ textarea {
 
 body{
   box-sizing: border-box;
+  font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
 }
 
 *{
@@ -434,6 +435,10 @@ body{
   padding: 1rem;
   flex-wrap: wrap;
   height: 100vh;
+}
+
+.monospace{
+  font-family:Consolas, monaco, monospace;
 }
 
 .swatch{
