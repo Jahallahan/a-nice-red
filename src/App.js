@@ -80,9 +80,11 @@ var App = React.createClass ({
             <ColorPickerOverlay color={ this.state.color } onColorPickerChanged={this.onColorPickerChanged} />
           </ColorInput>
         </Primary>
-        <Green color={ this.state.colorHsl }  />
-        <Red color={ this.state.colorHsl }  />
-        <Amber color={ this.state.colorHsl }  />
+        <div className="secondary-container">
+          <Green color={ this.state.colorHsl }  />
+          <Red color={ this.state.colorHsl }  />
+          <Amber color={ this.state.colorHsl }  />
+        </div>
         <Footer />
       </div>
 

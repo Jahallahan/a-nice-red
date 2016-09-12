@@ -64,7 +64,13 @@ var Green = React.createClass ({
     };
 
     return (
-      <div className="swatch green#" style={ styleGreen }> This is the Green Swatch #{ greenHex } </div>
+      <div className="swatch-container">
+        <div className="swatch green" style={ styleGreen }></div>
+        <div className="swatch-info">
+        <h4>Success</h4>
+        <p className="monospace">#{ greenHex }</p>
+        </div>
+      </div>
     );
   }
 });

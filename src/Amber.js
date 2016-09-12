@@ -56,7 +56,13 @@ var Amber = React.createClass ({
     };
 
     return (
-      <div className="swatch amber" style={ styleAmber }> This is the Amber Swatch #{ amberHex } </div>
+      <div className="swatch-container">
+        <div className="swatch amber" style={ styleAmber }></div>
+        <div className="swatch-info">
+        <h4>Warning</h4>
+        <p className="monospace">#{ amberHex }</p>
+        </div>
+      </div>
     );
   }
 });
