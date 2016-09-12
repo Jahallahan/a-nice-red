@@ -497,13 +497,15 @@ p{
   border-top-right-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
   border-left: none;
-  padding: 2rem;
+  padding: 3rem 2rem;
   display: flex;
   flex-direction: column;
 }
 
 .color-input-panel h2{
   flex: 1 100%;
+  margin-top: 0;
+  margin-bottom: 1rem;
 }
 
 .input-container{
@@ -519,6 +521,7 @@ p{
   padding: 0.5rem 1rem;
   width: 6em;
   height: 3rem;
+  vertical-align: top;
 }
 
 .picker-button-container{
@@ -541,4 +544,16 @@ p{
 .swatch{
   border-radius: 0.5rem;
   margin: 0.5rem;
+}
+
+.footer{
+  flex: 1 100%;
+  padding-top: 1rem;
+}
+
+.footer h3{
+  text-align: center;
+  font-weight: 400;
+  color: #747373;
+  margin: 0;
 }

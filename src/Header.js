@@ -1,13 +1,8 @@
 import React from 'react';
-import ColorInput from './ColorInput';
 
 var Header = React.createClass ({
 
   render: function() {
-
-    var anchorStyle = {
-      color: `#${this.props.color}`,
-    };
 
     return (
       <div className="header">

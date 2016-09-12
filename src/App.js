@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Header from './Header';
 import Primary from './Primary';
@@ -9,6 +8,7 @@ import Amber from './Amber';
 import Convert from 'color-convert';
 import ColorInput from './ColorInput';
 import ColorPickerOverlay from './ColorPicker';
+import Footer from './Footer';
 
 var urlHash = window.location.hash;
 
@@ -78,12 +78,12 @@ var App = React.createClass ({
         <Primary color={ this.state.color }>
           <ColorInput initialColor={ this.state.color } userText={this.state.userText} onColorChanged={this.onColorChanged} >
             <ColorPickerOverlay color={ this.state.color } onColorPickerChanged={this.onColorPickerChanged} />
-          </ColorInput>      
+          </ColorInput>
         </Primary>
         <Green color={ this.state.colorHsl }  />
         <Red color={ this.state.colorHsl }  />
         <Amber color={ this.state.colorHsl }  />
-        <h1>The color is { this.state.color }</h1>
+        <Footer />
       </div>
 
     );
