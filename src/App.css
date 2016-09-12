@@ -438,7 +438,6 @@ body{
   align-content: stretch;
   padding: 1rem;
   flex-wrap: wrap;
-  min-height: 100vh;
   max-width: 60rem;
   margin: 0 auto;
 }
@@ -473,12 +472,12 @@ h1{
 }
 
 .header{
-  flex: 0 0 0;
+  flex: 0 0 100%;
   text-align: center;
 }
 
 .primary-container{
-  flex: 1 1 0;
+  flex: 1 0 100%;
   display: flex;
   padding: 1rem 0;
 
@@ -499,17 +498,15 @@ h1{
   padding: 3rem 2rem;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .color-input-panel h2{
-  flex: 1 100%;
+
   margin-top: 0;
   margin-bottom: 1rem;
 }
 
-.input-container{
-  flex: 1 100%;
-}
 
 .color-input{
   font-size: 1.3rem;
@@ -542,7 +539,7 @@ h1{
   display:flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  flex: 1 1 0;
+  flex: 1 0 100%;
   margin-left: -3rem;
   padding: 2rem 0;
 
@@ -555,10 +552,31 @@ h1{
   flex: 1 33%;
   margin-left: 3rem;
 }
+
+.swatch-container:hover{
+  box-shadow: 1px 2px 5px 0 rgba(0,0,0,0.05);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
 .swatch{
   border-top-left-radius: 0.5rem;
   border-top-right-radius:0.5rem;
   flex: 1 0 50%;
+  min-height: 10rem;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  transition: all 0.2s ease;
+}
+
+.copy-text{
+  transition: all 0.2s ease;
+}
+
+.hidden{
+  opacity: 0;
 }
 
 .swatch-info{
@@ -582,10 +600,11 @@ h1{
   line-height: 1.5;
   margin-bottom: 0;
   margin-top: 0;
+  text-transform: lowercase;
 }
 
 .footer{
-  flex: 0 1 0;
+  flex: 0 0 100%;
   padding-top: 1rem;
 }
 

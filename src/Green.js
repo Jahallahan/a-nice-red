@@ -1,7 +1,16 @@
 import React from 'react';
 import Convert from 'color-convert';
+import CopyToClipboard from 'react-copy-to-clipboard';
+
 
 var Green = React.createClass ({
+
+  getInitialState() {
+  return {
+      copied: false,
+      hover: false
+    };
+  },
 
   getGreenH: function(primaryH){
 
@@ -55,22 +64,52 @@ var Green = React.createClass ({
       }
   },
 
+  onMouseOver: function(){
+    this.setState({
+      copied: false,
+      hover: true
+    })
+  },
+
+  onMouseLeave: function(){
+    this.setState({
+      hover: false
+    })
+  },
+
+  onCopy: function() {
+    this.setState({
+      copied: true,
+    });
+
+
+    setTimeout(() => {this.setState({copied: true, hover: false})}, 1000)
+  },
+
   render: function() {
 
-    var greenHex = Convert.hsl.hex( this.getGreenH(this.props.color[0]) ,  this.getGreenS(this.props.color[1]), this.getGreenL(this.props.color[2]) )
+    var greenHex = "#" + Convert.hsl.hex( this.getGreenH(this.props.color[0]) ,  this.getGreenS(this.props.color[1]), this.getGreenL(this.props.color[2]) )
 
     var styleGreen = {
-      background: "#" + greenHex,
+      background: greenHex,
     };
 
+
     return (
+      <CopyToClipboard text={ greenHex }
+                onCopy={this.onCopy}
+                onMouseOver={this.onMouseOver}
+                onMouseLeave={this.onMouseLeave}>
       <div className="swatch-container">
-        <div className="swatch green" style={ styleGreen }></div>
+        <div className="swatch green" style={ styleGreen }>
+        <span className={this.state.hover ? "copy-text" : "copy-text hidden"} >{this.state.copied ? "👍 Copied" : "👯 Click to copy"}</span>
+        </div>
         <div className="swatch-info">
         <h4>Success</h4>
-        <p className="monospace">#{ greenHex }</p>
+        <p className="monospace">{ greenHex }</p>
         </div>
       </div>
+      </CopyToClipboard>
     );
   }
 });
