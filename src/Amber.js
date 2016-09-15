@@ -1,5 +1,6 @@
 import React from 'react';
 import Convert from 'color-convert';
+import Swatch from './Swatch';
 
 var Amber = React.createClass ({
 
@@ -49,20 +50,11 @@ var Amber = React.createClass ({
 
   render: function() {
 
-    var amberHex = Convert.hsl.hex( this.getAmberH(this.props.color[0]) ,  this.getAmberS(this.props.color[1]), this.getAmberL(this.props.color[2]))
+    var amberHex = "#" + Convert.hsl.hex( this.getAmberH(this.props.color[0]) ,  this.getAmberS(this.props.color[1]), this.getAmberL(this.props.color[2]))
 
-    var styleAmber = {
-      background: "#" + amberHex,
-    };
 
     return (
-      <div className="swatch-container">
-        <div className="swatch amber" style={ styleAmber }></div>
-        <div className="swatch-info">
-        <h4>Warning</h4>
-        <p className="monospace">#{ amberHex }</p>
-        </div>
-      </div>
+      <Swatch color={amberHex} text="Warning" />
     );
   }
 });

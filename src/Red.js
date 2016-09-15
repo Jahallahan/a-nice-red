@@ -1,5 +1,6 @@
 import React from 'react';
 import Convert from 'color-convert';
+import Swatch from './Swatch';
 
 var Red = React.createClass ({
 
@@ -57,20 +58,10 @@ var Red = React.createClass ({
 
   render: function() {
 
-    var redHex = Convert.hsl.hex( this.getRedH(this.props.color[0]) ,  this.getRedS(this.props.color[1]), this.getRedL(this.props.color[2]) )
-
-    var styleRed = {
-      background: "#" + redHex,
-    };
+    var redHex = "#" + Convert.hsl.hex( this.getRedH(this.props.color[0]) ,  this.getRedS(this.props.color[1]), this.getRedL(this.props.color[2]) )
 
     return (
-      <div className="swatch-container">
-        <div className="swatch red" style={ styleRed }></div>
-        <div className="swatch-info">
-        <h4>Error</h4>
-        <p className="monospace">#{ redHex }</p>
-        </div>
-      </div>
+        <Swatch color={redHex} text="Error" />
     );
   }
 });

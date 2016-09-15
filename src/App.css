@@ -517,6 +517,7 @@ h1{
   width: 6em;
   height: 3rem;
   vertical-align: top;
+  text-transform: lowercase;
 }
 
 .picker-button-container{
@@ -580,7 +581,7 @@ h1{
 }
 
 .swatch-info{
-  flex: 1 0 0;
+  flex: 1 0 1;
   border: 1px solid #E9E9E9;
   border-top: none;
   border-bottom-left-radius: 0.5rem;

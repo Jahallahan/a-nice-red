@@ -81,7 +81,8 @@ var App = React.createClass ({
           </ColorInput>
         </Primary>
         <div className="secondary-container">
-          <Green color={ this.state.colorHsl }  />
+          <Green color={ this.state.colorHsl }>
+          </Green>
           <Red color={ this.state.colorHsl }  />
           <Amber color={ this.state.colorHsl }  />
         </div>
