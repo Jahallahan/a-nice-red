@@ -4,6 +4,8 @@
   border: 1px solid #E9E9E9;
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.1);
   border-radius: 5px;
+  margin-left:-125px;
+  margin-top: 0.25rem;
 }
 
 .react-color-picker__saturation-spectrum{

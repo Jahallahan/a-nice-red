@@ -8,14 +8,14 @@ var Amber = React.createClass ({
 
     switch(true){
       case (primaryH >= 240 || primaryH < 60): //Red
-        return 40;
+        return 42;
         break;
 
       case (primaryH >= 60 && primaryH < 140): //Green
-        return 37;
+        return 40;
         break;
       case (primaryH >= 140 && primaryH < 240): //Cyan
-        return 35;
+        return 38;
         break;
       default:
         return primaryH;
@@ -28,6 +28,9 @@ var Amber = React.createClass ({
       case (primaryS + 5 < 80 ):
         return 80;
         break;
+      case (primaryS + 5 > 100 ):
+          return 100;
+          break;
       default:
         return primaryS + 5;
         break;
@@ -36,14 +39,14 @@ var Amber = React.createClass ({
 
   getAmberL: function(primaryL){
     switch(true){
-      case (primaryL + 10 < 55 ):
+      case (primaryL + 15 < 55 ):
         return 55;
         break;
-      case (primaryL + 10 > 65 ):
+      case (primaryL + 15 > 65 ):
         return 65;
         break;
       default:
-        return (primaryL + 10);
+        return (primaryL + 15);
         break;
       }
   },

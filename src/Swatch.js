@@ -21,8 +21,9 @@ var Swatch = React.createClass ({
   onMouseLeave: function(){
     this.setState({
       hover: false,
-      copied: false
-    })
+    });
+
+    setTimeout(function() { this.setState({copied: false}); }.bind(this), 300);
   },
 
   onCopy: function() {

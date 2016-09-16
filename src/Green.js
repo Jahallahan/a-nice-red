@@ -60,8 +60,6 @@ var Green = React.createClass ({
 
     var greenHex = "#" + Convert.hsl.hex( this.getGreenH(this.props.color[0]) ,  this.getGreenS(this.props.color[1]), this.getGreenL(this.props.color[2]) )
 
-
-
     return (
 
         <Swatch color={greenHex} text="Success" />
