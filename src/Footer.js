@@ -27,7 +27,7 @@ var Footer = React.createClass ({
 
     return (
       <div className="footer">
-      <h3>Made with {reactIcon} and ❤️ by Jack Hallahan</h3>
+      <h3>Made with {reactIcon} and ❤️ by <a href="https://twitter.com/jahallahan" target="_blank" title="Jack Hallahan on Twitter">Jack Hallahan</a></h3>
       </div>
     );
   }

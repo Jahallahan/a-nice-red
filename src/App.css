@@ -472,12 +472,12 @@ h1{
 }
 
 .header{
-  flex: 0 0 100%;
+  flex: 0 0 auto;
   text-align: center;
 }
 
 .primary-container{
-  flex: 1 0 100%;
+  flex: 1 0 auto;
   display: flex;
   padding: 1rem 0;
 
@@ -540,7 +540,7 @@ h1{
   display:flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  flex: 1 0 100%;
+  flex: 1 0 auto;
   margin-left: -3rem;
   padding: 2rem 0;
 
@@ -550,7 +550,7 @@ h1{
   display:flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  flex: 1 33%;
+  flex: 1 0 auto;
   margin-left: 3rem;
 }
 
@@ -562,7 +562,7 @@ h1{
 .swatch{
   border-top-left-radius: 0.5rem;
   border-top-right-radius:0.5rem;
-  flex: 1 0 50%;
+  flex: 1 0 auto;
   min-height: 10rem;
   display:flex;
   align-items: center;
@@ -581,7 +581,7 @@ h1{
 }
 
 .swatch-info{
-  flex: 1 0 1;
+  flex: 1 0 auto;
   border: 1px solid #E9E9E9;
   border-top: none;
   border-bottom-left-radius: 0.5rem;
@@ -605,7 +605,7 @@ h1{
 }
 
 .footer{
-  flex: 0 0 100%;
+  flex: 0 0 auto;
   padding-top: 1rem;
 }
 
@@ -616,7 +616,7 @@ h1{
   margin: 0;
 }
 
-@media (max-width: 700px) {
+@media screen and (max-width: 700px) {
 
   .primary-container{
     flex-direction:column;
@@ -642,7 +642,7 @@ h1{
 
   }
   .swatch-container{
-    flex: 1 0 100%;
+    flex: 1 0 auto;
     margin: 1rem 0;
   }
 
