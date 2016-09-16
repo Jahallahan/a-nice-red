@@ -615,3 +615,35 @@ h1{
   color: #747373;
   margin: 0;
 }
+
+@media (max-width: 700px) {
+
+  .primary-container{
+    flex-direction:column;
+    wrap: wrap;
+  }
+
+  .primary-swatch{
+    min-height: 10rem;
+    border-radius: 0.5rem 0.5rem 0 0 ;
+  }
+
+  .color-input-panel{
+    border-radius: 0 0 0.5rem 0.5rem;
+    border: 1px solid #E9E9E9;
+    border-top: none;
+  }
+
+  .secondary-container{
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-left: 0;
+    padding: 0;
+
+  }
+  .swatch-container{
+    flex: 1 0 100%;
+    margin: 1rem 0;
+  }
+
+}
