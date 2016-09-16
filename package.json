@@ -19,5 +19,5 @@
   "eslintConfig": {
     "extends": "./node_modules/react-scripts/config/eslint.js"
   },
-  "homepage": "http://jahallahan.github.io/a-nice-red"
+  "homepage": "http://anice.red"
 }
