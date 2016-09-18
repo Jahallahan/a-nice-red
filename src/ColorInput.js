@@ -1,5 +1,4 @@
 import React from 'react';
-import { SketchPicker } from 'react-color';
 
 var ColorInput = React.createClass ({
 
