@@ -41,14 +41,14 @@ var App = React.createClass ({
   },
 
   componentDidUpdate(prevProps, prevState){
-    if (prevState.urlHash != this.state.urlHash){
+    if (prevState.urlHash !== this.state.urlHash){
       window.location.hash = this.state.urlHash;
     }
 
   },
 
   onColorChanged: function(newColor) {
-     var newColor = newColor.target.value;
+     newColor = newColor.target.value;
      var cleanedColor = newColor.replace(/[^A-Za-z0-9]/g, '');
      this.setState({
        color: cleanedColor,
