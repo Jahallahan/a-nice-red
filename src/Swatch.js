@@ -1,5 +1,4 @@
 import React from 'react';
-import Convert from 'color-convert';
 import CopyToClipboard from 'react-copy-to-clipboard';
 
 var Swatch = React.createClass ({

@@ -1,5 +1,4 @@
 import React from 'react';
-import ColorInput from './ColorInput';
 
 var Primary = React.createClass ({
 
