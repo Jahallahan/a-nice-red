@@ -46,8 +46,8 @@ var ColorPickerOverlay = React.createClass ({
     }
 
     return (
-      <div className="picker-button-container">
-        <button className="picker-button" onClick={this.handleClick}>🎨</button>
+      <div className="picker-button-container fl w-30-l w-50-m w-100">
+        <button className="bn pointer f3 bg-black-20 white-50 sans-serif pa3 bg-animate hover-bg-black-30 input-reset w-100" onClick={this.handleClick}>Color Picker</button>
         { this.state.displayColorPicker ? <div style={ popover }>
           <div style={ cover } onClick={ this.handleClose }/>
           <ColorPicker value={ this.props.color } onDrag={ this.props.onColorPickerChanged } hueWidth={10} />

@@ -4,6 +4,10 @@ var Footer = React.createClass ({
 
   render: function() {
 
+    var style={
+      color: `#${this.props.color}`
+    };
+
     var reactIcon = (
 <svg  x="0px" y="0px"
 	width="20px" height="20px" viewBox="0 0 600 600">
@@ -26,8 +30,8 @@ var Footer = React.createClass ({
     );
 
     return (
-      <div className="footer">
-      <h3>Made with {reactIcon} and ❤️ by <a href="https://twitter.com/jahallahan" target="_blank" title="Jack Hallahan on Twitter">Jack Hallahan</a></h3>
+      <div className="pa2">
+      <h3 className="fw4">Made with {reactIcon} and ❤️ by <a href="https://twitter.com/jahallahan" target="_blank" title="Jack Hallahan on Twitter" className="link" style={style}>Jack Hallahan</a></h3>
       </div>
     );
   }

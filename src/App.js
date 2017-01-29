@@ -5,6 +5,10 @@ import Primary from './Primary';
 import Green from './Green';
 import Red from './Red';
 import Amber from './Amber';
+import LightGray from './LightGray';
+import MidGray from './MidGray';
+import DarkGray from './DarkGray'
+import Black from './Black';
 import Convert from 'color-convert';
 import ColorInput from './ColorInput';
 import ColorPickerOverlay from './ColorPicker';
@@ -73,20 +77,31 @@ var App = React.createClass ({
 
 
     return (
-      <div className="App">
-        <Header />
-        <Primary color={ this.state.color }>
-          <ColorInput initialColor={ this.state.color } userText={this.state.userText} onColorChanged={this.onColorChanged} >
-            <ColorPickerOverlay color={ this.state.color } onColorPickerChanged={this.onColorPickerChanged} />
-          </ColorInput>
-        </Primary>
-        <div className="secondary-container">
-          <Green color={ this.state.colorHsl }>
-          </Green>
-          <Red color={ this.state.colorHsl }  />
-          <Amber color={ this.state.colorHsl }  />
+      <div className="sans-serif near-black bg-light-silver">
+        <div className="mw8 center pa4-ns pa3">
+          <Header color={ this.state.color }/>
+          <h3 className="sans-serif-display fw4 ttu f2 white mt4 mb2 ph2">Primary Color</h3>
+          <Primary color={ this.state.color }>
+            <ColorInput initialColor={ this.state.color } userText={this.state.userText} onColorChanged={this.onColorChanged} >
+              <ColorPickerOverlay color={ this.state.color } onColorPickerChanged={this.onColorPickerChanged} />
+            </ColorInput>
+          </Primary>
+            <h3 className="sans-serif-display fw4 ttu f2 white mt4 mb2 ph2">Alert Colors</h3>
+          <div className="cf">
+            <Green color={ this.state.colorHsl } />
+
+            <Red color={ this.state.colorHsl }  />
+            <Amber color={ this.state.colorHsl }  />
+          </div>
+          <h3 className="sans-serif-display fw4 ttu f2 white mt4 mb2 ph2">Neutral Colors</h3>
+        <div className="cf">
+          <LightGray color={ this.state.colorHsl } />
+          <MidGray color={ this.state.colorHsl }  />
+          <DarkGray color={ this.state.colorHsl }  />
+          <Black color={ this.state.colorHsl }  />
         </div>
-        <Footer />
+          <Footer color={ this.state.color }/>
+        </div>
       </div>
 
     );

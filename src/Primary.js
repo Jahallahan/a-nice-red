@@ -9,13 +9,11 @@ var Primary = React.createClass ({
     };
 
     return (
-      <div className="primary-container">
-        <div className="primary-swatch" style={ primaryStyle }>
-        </div>
-        <div className="color-input-panel">
-          <h2>Primary Color</h2>
+      <div className="ph2 mb3 cf">
+        <div className="big-shadow cf pt7-l pb5-ns ph5-ns pt6-m  pt6 pb4 ph4 mb3" style={ primaryStyle }>
+
           {this.props.children}
-        </div>
+               </div>
       </div>
     );
   }
