@@ -13,6 +13,7 @@ import Convert from 'color-convert';
 import ColorInput from './ColorInput';
 import ColorPickerOverlay from './ColorPicker';
 import Footer from './Footer';
+import Blue from "./Blue";
 
 var urlHash = window.location.hash;
 
@@ -89,9 +90,9 @@ var App = React.createClass ({
             <h3 className="sans-serif-display fw4 ttu f2 white mt4 mb2 ph2">Alert Colors</h3>
           <div className="cf">
             <Green color={ this.state.colorHsl } />
-
             <Red color={ this.state.colorHsl }  />
             <Amber color={ this.state.colorHsl }  />
+            <Blue color={ this.state.colorHsl }  />
           </div>
           <h3 className="sans-serif-display fw4 ttu f2 white mt4 mb2 ph2">Neutral Colors</h3>
         <div className="cf">
