@@ -42,7 +42,7 @@ var Swatch = React.createClass ({
                 onCopy={this.onCopy}
                 onMouseOver={this.onMouseOver}
                 onMouseLeave={this.onMouseLeave}>
-        <div className="fl w-third-l w-50-m w-100 ph2 mb3">
+        <div className="fl w-25-l w-50-m w-100 ph2 mb3">
         <div className="bg-white big-shadow">
           <div className="h5 tc hide-child pointer" style={style}>
 
